@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="task1">
+    <h1>Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.</h1>
+    <div><h3>vat Ly</h3>
+        <input id="ly" type="text">
+        ,<h3>Hoa Hoc</h3>
+        <input id="hoa" type="text">
+        <h3>Sinh hoc</h3>
+        <input id="sinh" type="text">
+        <br>
+        <button style="margin-top: 30px; width: 200px ;height:30px; " onclick="tinhdiem()" id="submit"> Tinh Diem</button>
+        <h3 id="tb">Diem TB la :</h3>
+        <h3 id="tong">Diem Tong la :</h3>
+        <script>
+            function tinhdiem(){
+            let ly=document.getElementById('ly').value;
+            let hoa=document.getElementById('hoa').value;
+            let sinh=document.getElementById('sinh').value;
+            let diem;
+            if (isNaN(ly) && isNaN(hoa) && isNaN(sinh)) {
+              alert("value is not number")
+             }else if(ly >10 || hoa >10 || sinh >>10){
+                alert("The number is too large")
+            }
+            else {
+                diem=(parseInt(ly) + parseInt(hoa) + parseInt(sinh) )/3;
+                document.getElementById("tb").innerHTML="Diem TB la : " + diem;
+                diem= parseInt(ly)+parseInt(hoa)+ parseInt(sinh) ;
+                document.getElementById("tong").innerHTML="Diem Tong la : " + diem;
+            }}
+        </script>
+    </div>
+</div>
+<div class="task2"  >
+  <h1>Bài 2:  Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit).</h1>
+    <button style="margin-top: 30px; width: 200px ;height:30px; " onclick="changedoc()" id="changeC"> Chuyen Doi Nhiet Do</button>
+    <h3 id="nheitdo10"></h3>
+    <script>
+      function changedoc(){
+          let nhietdo =prompt("please enter your temperature","vd;5");
+          let tinhtoan = nhietdo*9/5-32;
+          if (nhietdo != null){
+              document.getElementById("nheitdo10").innerHTML=tinhtoan;
+
+          }
+      }
+    </script>
+
+</div>
+<div class="task3" >
+ <h1>Bài 3: Viết chương trình tính diện tích hình tròn ,chu vi hình tròn </h1>
+    <button style="margin-top: 30px; width: 200px ;height:30px; " onclick="hinhtron()" id="hinhtron"> tinh toan hinh tron</button>
+    <p id="dientich1">Dien tinh :</p>
+    <p id="chuvi1">Chu Vi  :</p>
+    <script>
+        function hinhtron(){
+           let bankinh=prompt("please enter radius (number): ");
+           let so=bankinh;
+           let diemtinh;
+            if(bankinh==null || isNaN(bankinh)){
+                alert("Invalid data")
+            }else{
+                 dientinh=so*so*3.14;
+              document.getElementById("dientich1").innerHTML= "Dien Tich:   " + dientinh;
+                 chuvi=2*so*3.14;
+                document.getElementById("chuvi1").innerHTML= "Chu vi: " + chuvi;
+
+            }
+        }
+    </script>
+
+</div>
+
+</body>
+</html>
